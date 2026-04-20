@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Leaf Disease Detection</title>
+<!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌿 Plant Leaf Disease Detection</h1>
+            <p>Upload a leaf image to detect diseases using ML</p>
+        </header>
+
+        <main>
+            <div class="analysis-layout">
+                <!-- Left: Upload -->
+                <div class="upload-section" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload Leaf Image</h3>
+                    <p>Drag & drop or <label for="fileInput" class="file-label">browse</label></p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+
+                <!-- Right: Preview + Predict + Results -->
+                <div class="analysis-section">
+                    <div class="preview-area" id="previewContainer">
+                        <img id="previewImg" alt="Leaf Preview">
+                        <div class="spinner" id="spinner"></div>
+                        <button id="predictBtn" class="predict-btn">🔍 Detect Disease</button>
+                    </div>
+                    <div class="results-area" id="results" style="display: none;">
+                        <h2>Results</h2>
+                        <div class="disease-card">
+                            <h3 id="diseaseName">Processing...</h3>
+                            <div class="confidence-bar">
+                                <span id="confidenceText">95%</span>
+                                <div class="bar">
+                                    <div class="fill" id="confidenceFill"></div>
+                                </div>
+                            </div>
+                            <p id="description">Loading...</p>
+                            <div class="remedies">
+                                <h4>Treatment:</h4>
+                                <ul id="remediesList"></ul>
+                            </div>
+                        </div>
+                        <button id="newPrediction" class="new-btn">🔄 New Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Machine Learning | Demo Version</p>
+        </footer>
+    </div>
+
+<script src="script_final.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+    <script src="tfjs_model.js"></script>
+    <link rel="stylesheet" href="style_greenery.css">
+</body>
+</html>
